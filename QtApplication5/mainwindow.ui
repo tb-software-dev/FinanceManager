@@ -112,7 +112,7 @@
 							</widget>
 						</item>
 						<item>
-							<widget class="QPushButton" name="DeleteButton">
+							<widget class="QPushButton" name="deleteButton">
 								<property name="text">
 									<string>Löschen</string>
 								</property>
@@ -127,16 +127,67 @@
 						</item>
 					</layout>
 				</item>
+				
+				<!-- Search Section -->
+				<item>
+					<layout class="QHBoxLayout" name="horizontalLayout_2">
+						<item>
+							<widget class="QLineEdit" name="searchEdit">
+								<property name="placeholderText">
+									<string>Suche nach Beschreibung...</string>
+								</property>
+							</widget>
+						</item>
+						<item>
+							<widget class ="QPushButton" name="searchButton">
+								<property name ="text">
+									<string>Suchen</string>
+								</property>
+							</widget>
+						</item>
+					</layout>
+				</item>
+				
+				<!-- Transkationen -->
+				<item>
+					<widget class="QTableView" name="transactionTable">
+						<property name="selectionMode">
+							<enum>QAbstractItemView::SingleSelection</enum>
+						</property>
+						<property name="selectionBehavior">
+							<enum>QAbstractItemView::SelectRows</enum>
+						</property>
+					</widget>
+				</item>
+				
+				<!-- Summary Section -->
+				<item>
+					<layout class="QHBoxLayout" name="horizontalLayout_3">
+						<item>
+							<widget class="QLabel" name="incomeLabel">
+								<property name="text">
+									<string>Einnahmen: 0.00 €</string>
+								</property>
+							</widget>
+						</item>
+						<item>
+							<widget class="QLabel" name="expensesLabel">
+								<property name="text">
+									<string>Ausgaben: 0.00 €</string>
+								</property>
+							</widget>
+						</item>
+						<item>
+							<widget class="QLabel" name="balanceLabel">
+								<property name="text">
+									<string>Saldo: 0.00 €</string>
+								</property>
+							</widget>
+						</item>
+					</layout>
+				</item>
 						
-				
-				
-				
-				
-				
-				
 			</layout>
-
-
 		</widget>
 	</widget>
 	<resources/>
