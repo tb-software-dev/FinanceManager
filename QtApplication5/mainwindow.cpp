@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
 	// Signal-Slot-Verbindungen
 	connect(ui->transactionTable->selectionModel(), &QItemSelectionModel::selectionChanged,
 		this, &MainWindow::updateTotalLabels);
-	
+
 }
 
 MainWindow::~MainWindow()
@@ -50,7 +50,7 @@ void MainWindow::initializeDatabase()
 		"category TEXT ,"
 		"amount REAL ,"
 		"type TEXT)");
-		
+
 }
 
 void MainWindow::setupTable()
@@ -87,7 +87,7 @@ void MainWindow::loadTransactions()
 		// Column 3: Betrag ( & euro-char)
 		double amount = query.value(4).toDouble();
 		QString amountText = QString("%1 %2").arg(QString::number(amount, 'f', 2))
-							.arg(QChar(0x20AC));
+			.arg(QChar(0x20AC));
 		QStandardItem* amountItem = new QStandardItem(amountText);
 
 		// Column 4: (Einnahmen/Ausgaben)
@@ -202,7 +202,7 @@ void MainWindow::updateTotalLabels()
 
 	for (int row = 0; row < model->rowCount(); row++)
 	{
-		
+
 		QString rawAmount = model->item(row, 3)->text();
 
 		rawAmount.remove(" " + euroSymbol);
@@ -211,11 +211,11 @@ void MainWindow::updateTotalLabels()
 
 
 		// Einnahme oder Ausgabe bestimmen
-		if (model->item(row, 4)->text() == "Einnahme") 
+		if (model->item(row, 4)->text() == "Einnahme")
 		{
 			income += amount;
 		}
-		else 
+		else
 		{
 			expenses += amount;
 		}
@@ -223,7 +223,7 @@ void MainWindow::updateTotalLabels()
 
 	}
 
-	ui->incomeLabel ->setText(QString("Einnahmen: %1 %2 ").arg(income, 0, 'f', 2).arg(euroSymbol));
+	ui->incomeLabel->setText(QString("Einnahmen: %1 %2 ").arg(income, 0, 'f', 2).arg(euroSymbol));
 	ui->expensesLabel->setText(QString("Ausgaben: %1 %2 ").arg(expenses, 0, 'f', 2).arg(euroSymbol));
 	ui->balanceLabel->setText(QString("Saldo: %1 %2 ").arg(income - expenses, 0, 'f', 2).arg(euroSymbol));
 }
@@ -259,4 +259,3 @@ void MainWindow::on_generateReportButton_clicked()
 
 	QMessageBox::information(this, "Monatsbericht", report);
 }
-
