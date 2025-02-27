@@ -166,21 +166,21 @@
 						<item>
 							<widget class="QLabel" name="incomeLabel">
 								<property name="text">
-									<string>Einnahmen: 0.00 €</string>
+									<string>Einnahmen: 0.00 </string>
 								</property>
 							</widget>
 						</item>
 						<item>
 							<widget class="QLabel" name="expensesLabel">
 								<property name="text">
-									<string>Ausgaben: 0.00 €</string>
+									<string>Ausgaben: 0.00 </string>
 								</property>
 							</widget>
 						</item>
 						<item>
 							<widget class="QLabel" name="balanceLabel">
 								<property name="text">
-									<string>Saldo: 0.00 €</string>
+									<string>Saldo: 0.00 </string>
 								</property>
 							</widget>
 						</item>
